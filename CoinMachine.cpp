@@ -1,6 +1,4 @@
-//Jordan Ma gt7995
-//The header files I used in creation of 
-//this program
+//Jordan Ma
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -9,7 +7,6 @@ using namespace std;
 
 int main()
 {
-	//since coins cant be decimal, i declare them int
 	int quarters = 25,
 		nickels = 25,
 		dimes = 25,
@@ -33,14 +30,7 @@ int main()
 
 	while (run == true)
 	{
-		//THIS IS THE ONLY DEVIATION FROM THE
-		//ASSIGNMENT EXAMPLE
-		//SINCE I ALREADY DECLARED MY VARIABLES
-		//I COULD NOT ASK THE USER TO INPUT
-		//A DIGIT AS A CHAR OR A CHAR
-		//AS A DIGIT, THIS BROKE MY CODE
-		//THEREFORE I ASK IF THEY WISH TO CONTINUE
-		//THEN ASK FOR A PRICE THATS A MULTIPLE OF 5
+		//Checks for user input for char 
 		cout << "Welcome to the vending machine change maker program\n"
 			<< "Change maker initialized.\n"
 			<< "Stock contains:\n";
@@ -61,11 +51,6 @@ int main()
 		{
 			while (runMenu == true)
 			{
-				//******************************************************************************************************************************************
-				//******************************************************************************************************************************************
-				//******************************************************************************************************************************************
-				//This is the re submission edit so that the program will run without the minor bug mentioned
-				//This loop will check to see if the input price is a double or a char
 				while (cancel == true)
 				{
 					cout << "\nEnter the purchase price(xx.xx): ";
@@ -90,13 +75,7 @@ int main()
 					}
 				}
 				cancel = true;
-				//******************************************************************************************************************************************
-				//******************************************************************************************************************************************
-				//******************************************************************************************************************************************
-
-
-				//this checks to see if the amount is a positive number
-				//thats a multiple of 5
+				//this checks to see if the amount is a positive multiple of 5
 				if ((user > 0) && (static_cast<int>((user * 100)) % 5 == 0))
 				{
 					cout << "\t Menu for deposits:\n"
@@ -165,12 +144,6 @@ int main()
 					cout << "Illegal price: Must be a non-negative multiple of 5 cents.";
 				}
 			}
-			//THE COMMENTED OUT SECTIONS OF CODE FUNCTION BUT IT WOULD 
-			//MEAN MY MACHINE DISPENSES BILLS AS WELL AS COINS
-			//IF I CAN GET EXTRA CREDIT FOR IT PLEASE CONSIDER IT
-			//WITH THESE TWO LOOPS MY MANAGER CASE WOULD ALSO 
-			//NEVER COME UP BECAUSE MY MACHINE TAKES MORE MONEY
-			//THAN IT RETURNS
 			if (payment < 0)
 			{
 				withdraw = (-1) * payment;
@@ -182,6 +155,7 @@ int main()
 			//is at least equal to the amount of each coin
 			while (withdraw > 0)
 			{
+				//Uncomment the following while loops to dispense bills
 				/*while (withdraw >= 500 && fives > 0)
 				{
 					withdraw -= 500;
@@ -261,9 +235,7 @@ int main()
 				cNickels = 0;
 			}
 			cout << "\n--------------------------\n\n\n";
-			//THIS WAS MY ORIGINAL REFUND STATEMENT,  PLEASE CONSIDER IT FOR EXTRA CREDIT
-			//IT WORKS BUT INCLUDES BILLS.
-
+			//Uncomment the following condition to allow bills feature to run
 			/*if ((cFives + cOnes + cQuarters + cDimes + cNickels) > 0)
 			{
 				cout << "\nPlease take your change.\n"
